@@ -21,6 +21,12 @@ export interface InputChip {
   pins: Array<InputPin>
   sectionId?: SectionId
 }
+export interface InputObstacle {
+  obstacleId: string
+  center: { x: number; y: number }
+  width: number
+  height: number
+}
 export interface InputDirectConnection {
   pinIds: [PinId, PinId]
   netId?: string
@@ -36,6 +42,7 @@ export interface InputNetConnection {
 
 export interface InputProblem {
   chips: Array<InputChip>
+  obstacles?: Array<InputObstacle>
   directConnections: Array<InputDirectConnection>
   netConnections: Array<InputNetConnection>
 
